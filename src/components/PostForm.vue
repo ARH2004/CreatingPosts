@@ -1,9 +1,9 @@
 <template>
     <form @submit.prevent>
         <h3>Создание поста:</h3>
-        <input v-model="post.title" class="input" type="text" placeholder="Название поста...">
-        <input v-model="post.body" class="input" type="text" placeholder="Описание поста...">
-        <button class="btn" @click="createPost">Добавить пост</button>
+        <my-input v-model.trim="post.title" type="text" placeholder="Название поста..." />
+        <my-input v-model.trim="post.body" type="text" placeholder="Описание поста..." />
+        <my-button class="add-post" @click="createPost">Добавить пост</my-button>
     </form>
 </template>
 <script>
@@ -29,20 +29,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.input {
-    width: 100%;
-    border: 3px solid orange;
-    padding: 10px 15px;
-    margin-top: 15px;
-}
-
-.btn {
-    align-self: flex-end;
-    margin-top: 15px;
-    padding: 10px;
-    border: 3px solid orange;
-    color: rgb(98, 255, 0);
-    font-size: 18px;
-    background: none;
+.add-post {
+    align-self: end;
 }
 </style>
