@@ -1,19 +1,16 @@
 <template>
-    <div class="dialog" v-if="show">
+    <div class="dialog" v-if="show" @click.stop="hideDialog">
         <div class="dialog__content">
             <slot></slot>
         </div>
     </div>
 </template>
 <script>
+import toggleMixin from '@/mixins/toggleMixin';
+
 export default {
     name: 'my-dialog',
-    props: {
-        show: {
-            type: Boolean,
-            default: false,
-        }
-    }
+    mixins: [toggleMixin]
 }
 </script>
 <style lang="scss" scoped>
