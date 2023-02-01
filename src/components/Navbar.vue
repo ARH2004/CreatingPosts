@@ -4,6 +4,7 @@
         <router-link to="/" class="link__router">Главная</router-link>
         <router-link to="/posts" class="link__router">Посты</router-link>
         <router-link to="/about" class="link__router">О приложении</router-link>
+        <router-link to="/store" class="link__router">Store</router-link>
     </div>
 </template>
 <script>
