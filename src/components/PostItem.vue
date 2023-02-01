@@ -1,10 +1,12 @@
 <template>
     <div class="post">
         <div>
+            {{ post.id }}
             <div><strong>Название поста: </strong>{{ post.title }} </div>
             <div><strong>Описание поста: </strong>{{ post.body }} </div>
         </div>
         <div class="post__btns">
+            <my-button @click="$router.push(`/posts/${post.id}`)" class="post__delBtn">Открыть</my-button>
             <my-button @click="delPost" class="post__delBtn">Удалить</my-button>
         </div>
     </div>
@@ -35,6 +37,7 @@ export default {
 
     &__delBtn {
         color: red;
+        display: flex;
     }
 }
 </style>
